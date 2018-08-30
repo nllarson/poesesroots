@@ -1,4 +1,4 @@
-const devKey = require ('./development.json');
+const devKey = require ('./development');
 const prodKey = require ('./production');
 
 if (process.env.NODE_ENV === 'production') {

@@ -6,7 +6,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-firestore',
       options: {
-        credential: require("./firebase.json"),
+        credential: require("./credentials").FIRESTORE_CREDENTIALS,
         types: [
           {
             type: 'Image',

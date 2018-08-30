@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default Starter',
@@ -6,7 +8,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-firestore',
       options: {
-        credential: require("./credentials").FIRESTORE_CREDENTIALS,
+        credential: JSON.parse(process.env.GATSBY_FIRESTORE_CREDENTIALS),
         types: [
           {
             type: 'Image',
@@ -15,11 +17,12 @@ module.exports = {
               name: doc.name,
               category: doc.category,
               src: doc.src,
-              project: doc.project              
+              project: doc.project,
             }),
-          }
+          },
         ],
       },
     },
-    'gatsby-plugin-react-helmet'],
+    'gatsby-plugin-react-helmet',
+  ],
 }

@@ -4,14 +4,15 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/header'
 import './index.css'
+import './bootstrap.min.css'
 
 const Layout = ({ children, data }) => (
   <div>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: 'Poese\'s Roots Landscaping' },
+        { name: 'keywords', content: 'landscaping, lincoln, nebraska, omaha, retaining walls, patios, concrete, plants, decks' },
       ]}
     />
     <Header siteTitle={data.site.siteMetadata.title} />

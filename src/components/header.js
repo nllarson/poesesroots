@@ -5,11 +5,10 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
+  NavItem,
+  NavLink
 } from 'reactstrap'
+import Link from 'gatsby-link'
 
 class Header extends React.Component {
   constructor(props) {
@@ -30,22 +29,22 @@ class Header extends React.Component {
     const { siteTitle } = this.props
     return (
       <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">{siteTitle}</NavbarBrand>
+        <Navbar fixed expand="md">
+          <NavbarBrand href="/" tag={siteTitle}>{siteTitle}</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+            <Nav>
+              <NavItem>
+                <NavLink href="page-2">Link</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#">Another Link</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink disabled href="#">
+                  Disabled Link
+                </NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
